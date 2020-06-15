@@ -1924,7 +1924,7 @@ def grabsqli(ip):
                 try:
                     response = urllib2.urlopen(i).read()
                     checksqli(i)
-                except urllib2.HTTPError, e:
+                except urllib2.HTTPError as e:
                     str(sites).strip(i)
 
             page = page + 10
