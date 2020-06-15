@@ -2080,7 +2080,7 @@ def wpminiscanner():
     print('[*] Found, ', len(wpeasyupload), ' wp_easyupload exploit.')
     print('-' * 30 + '\n')
     for ss in wpsymposium:
-        print ss
+        print(ss)
 
     print('[*] Found, ', len(wpsymposium), ' wp_sympsiup exploit.')
 
