@@ -1290,7 +1290,7 @@ def gravity():
     sites = bing_all_grabber(str(ip))
     gravityforms = check_gravityforms(sites)
     for ss in gravityforms:
-        print ss
+        print(ss)
 
     print('\n')
     print('[*] Found, ', len(gravityforms), ' gravityforms.')
