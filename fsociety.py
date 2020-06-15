@@ -159,7 +159,7 @@ class fsociety:
        {11}-CONTRIBUTORS
        {99}-EXIT\n
      ''')
-        choice = raw_input(fsocietyPrompt)
+        choice = raw_input(fsociety.Prompt)
         clearScr()
         if choice == "1":
             informationGatheringMenu()
@@ -240,7 +240,7 @@ class sniffingSpoofingMenu:
         print("   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
         print("   {4}--SMTP Mailer - Tool to send SMTP mail\n ")
         print("   {99}-Back To Main Menu \n")
-        choice6 = raw_input(fsocietyPrompt)
+        choice6 = raw_input(fsociety.Prompt)
         clearScr()
         if choice6 == "1":
             setoolkit()
@@ -285,7 +285,7 @@ class webHackingMenu:
         print("   {11}-BruteX - Automatically brute force all services running on a target")
         print("   {12}-Arachni - Web Application Security Scanner Framework \n ")
         print("   {99}-Back To Main Menu \n")
-        choiceweb = raw_input(fsocietyPrompt)
+        choiceweb = raw_input(fsociety.Prompt)
         clearScr()
         if choiceweb == "1":
             maine()
@@ -357,7 +357,7 @@ class postExploitationMenu:
         print("   {2}--POET")
         print("   {3}--Phishing Framework \n")
         print("   {99}-Return to main menu \n ")
-        choice11 = raw_input(fsocietyPrompt)
+        choice11 = raw_input(fsociety.Prompt)
         clearScr()
         if choice11 == "1":
             sitechecker()
@@ -402,7 +402,7 @@ class informationGatheringMenu:
         print("  {7}--Doork")
         print("  {8}--Crips\n  ")
         print("  {99}-Back To Main Menu \n")
-        choice2 = raw_input(fsocietyPrompt)
+        choice2 = raw_input(fsociety.Prompt)
         clearScr()
         if choice2 == "1":
             nmap()
@@ -826,7 +826,7 @@ class wirelessTestingMenu:
         print("   {2}--pixiewps")
         print("   {3}--Bluetooth Honeypot GUI Framework \n")
         print("   {99}-Back To The Main Menu \n")
-        choice4 = raw_input(fsocietyPrompt)
+        choice4 = raw_input(fsociety.Prompt)
         clearScr()
         if choice4 == "1":
             reaver()
@@ -944,7 +944,7 @@ class exploitationToolsMenu:
         print("   {8}--Bruteforce the Android Passcode given the hash and salt")
         print("   {9}--Joomla SQL injection Scanner \n ")
         print("   {99}-Go Back To Main Menu \n")
-        choice5 = raw_input(fsocietyPrompt)
+        choice5 = raw_input(fsociety.Prompt)
         clearScr()
         if choice5 == "1":
             atscan()
@@ -1335,7 +1335,7 @@ def pisher():
     os.system("python pisher.py")
 
 
-menuu = fsocietylogo + '''
+menuu = fsociety.logo + '''
 
    {1}--Get all websites
    {2}--Get joomla websites
@@ -1368,7 +1368,7 @@ class Fscan:
         self.getSites(False)
         print(menuu)
         while True:
-            choice = raw_input(fsocietyPrompt)
+            choice = raw_input(fsociety.Prompt)
             if choice == '1':
                 self.getSites(True)
             elif choice == '2':
